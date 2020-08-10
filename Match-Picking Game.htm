@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Pick</title>
+    <style>
+    input
+    {
+        font-size:x-large;
+    }
+    font
+    {
+        font-size:x-large;
+    }
+        .style1
+        {
+            width: 231px;
+        }
+        .style2
+        {
+            width: 562px;
+        }
+        .style3
+        {
+            width: 249px;
+        }
+        div
+        {
+            font-size:x-large;
+        }
+    </style>
+        <script type="text/javascript">
+            var matches = 0;
+            var curr = 1;
+            var cu;
+            function init() {
+           
+                t1.value = 1;
+                t2.value = 1;
+                matches = parseInt(count.value);
+                curr = parseInt(tt.value);
+                if (curr == 1) {
+                    b1.disabled = false;
+                    b2.disabled = true;
+                } else {
+                    b1.disabled = true;
+                    b2.disabled = false;
+                }
+                ad.innerHTML = "Initial Count = " + matches+"</br>";
+            }
+            function pick() {
+                var t = 0;
+                if (curr == 1) {
+ 
+                    t = parseInt(t1.value)
+                    if (!(t <= 3 && t >= 1)) {
+                        alert("the picked matches must be between 1 and 3");
+                        return;
+                    }
+                    
+                    matches -= t;
+                    curr = 2;
+                    t1.value = 1;
+                    b1.disabled = true;
+                    b2.disabled = false;
+                } else {
+ 
+                    t = parseInt(t2.value)
+                    if (!(t <= 3 && t >= 1)) {
+                        alert("the picked matches must be between 1 and 3");
+                        return;
+                    }
+                    matches -= t;
+                    curr = 1;
+                    t2.value = 1;
+                    b1.disabled = false;
+                    b2.disabled = true;  
+                }
+       
+               // dis.innerHTML = "<b>Current Count = " + matches + "</b>";
+                     if (curr == 2) {
+                ad.innerHTML += "*Player <i>1</i> Selected <b>" + t + "</b> matches<br/>";
+                } else {
+                ad.innerHTML += "*Player <i>2</i> Selected <b>" + t + "</b> matches;<br/> ";
+
+            }
+            count.value = matches;
+            if (matches <= 1) {
+                if (curr == 2) {
+                    alert("Player 2 lose");
+                    ad.innerHTML += "Player 2 lose!";
+                    return;
+                } else {
+                ad.innerHTML += "Player 1 lose";
+                    alert("Player 1 lose!");
+
+                    return;
+                }
+            }
+            }
+    </script>
+</head>
+<body background="b.jpg">
+    <table style="width:133%;">
+        <tr>
+            <td class="style1">
+                &nbsp;</td>
+            <td class="style2">
+                <h1>Have a Pick!</h1></td>
+               
+            <td class="style3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style1">
+                &nbsp;</td>
+            <td class="style2">
+                Developer: Donghua Chen<br />
+            </td>
+            <td class="style3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style1">
+<div id="ad" />
+            </td>
+            <td class="style2">
+            <font><br /><b>Setting:</b></font><br />
+                <font>Matches Count:</font><input type="text" id="count" value="10" /><br />
+                <br /><font>
+                Player&nbsp;&nbsp;&nbsp;&nbsp; </font><input type="text" id="tt" value="1" /><font> &nbsp;First<br />
+                </font><br /><input type="button" value="InitGame" onclick="init()" /></td>
+            <td class="style3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style1">
+                &nbsp;</td>
+            <td class="style2"><br />
+            <font><b>Let's Play!</b></font>
+                <br />
+<input type="text" value="1" id="t1" /><input type="button" id="b1" value="Player 1" onclick="pick()"/><br />
+                <br />
+<input type="text" value="1" id="t2" /><input type="button" id="b2"  value="Player 2" onclick="pick()" /><br />
+            </td>
+            <td class="style3">
+                &nbsp;</td>
+        </tr>
+    </table>
+    <br />
+
+<br />
+    <br />
+&nbsp;
+</body>
+
+</html>
