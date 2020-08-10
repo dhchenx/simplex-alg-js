@@ -2,7 +2,7 @@
 
 > Developed by Donghua Chen, Beijing Jiaotong University
 
-Source codes: (1) [Simplex Algorithm in JavaScript](Simplex-Algorithm.htm); (2) [Match-Picking Game](Match-PickingGame.html).
+Source codes: (1) [Simplex Algorithm in JavaScript](Simplex-Algorithm.htm); (2) [Match-Picking Game](Match-PickingGame.htm).
 
 ## Overview
 **Management Operations Research** is a very useful course, which contains various kinds of useful management and operations research algorithm. Through the program designing, we apply our knowledge to solve the problem by programming based on the algorithm in the textbook, and then it can help us to know better about the true meaning and spirit of different algorithm in operations research. This program reports contains two part of program: A common solving program based on the Simplex Algorithm & Big M Method and A game of picking matches. The programs adopt the JavaScript program language, which is easy to run in any platform with a browser.
